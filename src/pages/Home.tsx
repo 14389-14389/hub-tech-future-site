@@ -1,19 +1,20 @@
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import heroBackground from "@/assets/hero-bg.jpg";
 
 const Home = () => {
   const techStack = [
-    { name: "AWS", icon: "☁️" },
-    { name: "Supabase", icon: "⚡" },
-    { name: "Firebase", icon: "🔥" },
-    { name: "GitHub", icon: "🐙" },
-    { name: "React", icon: "⚛️" },
-    { name: "Node.js", icon: "🟢" },
-    { name: "PostgreSQL", icon: "🐘" },
-    { name: "MongoDB", icon: "🍃" },
+    { name: "AWS", icon: "☁️", url: "https://aws.amazon.com" },
+    { name: "Supabase", icon: "⚡", url: "https://supabase.com" },
+    { name: "Firebase", icon: "🔥", url: "https://firebase.google.com" },
+    { name: "GitHub", icon: "🐙", url: "https://github.com" },
+    { name: "React", icon: "⚛️", url: "https://react.dev" },
+    { name: "Node.js", icon: "🟢", url: "https://nodejs.org" },
+    { name: "PostgreSQL", icon: "🐘", url: "https://postgresql.org" },
+    { name: "MongoDB", icon: "🍃", url: "https://mongodb.com" },
   ];
 
   return (
@@ -104,13 +105,19 @@ const Home = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
             {techStack.map((tech) => (
-              <Card 
-                key={tech.name} 
-                className="p-6 text-center hover:shadow-card transition-all duration-300 hover:scale-105 bg-card/50 backdrop-blur-sm"
+              <a 
+                key={tech.name}
+                href={tech.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
               >
-                <div className="text-3xl mb-2">{tech.icon}</div>
-                <p className="text-sm font-medium text-foreground">{tech.name}</p>
-              </Card>
+                <Card className="p-6 text-center hover:shadow-card transition-all duration-300 hover:scale-105 bg-card/50 backdrop-blur-sm cursor-pointer relative overflow-hidden">
+                  <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">{tech.icon}</div>
+                  <p className="text-sm font-medium text-foreground">{tech.name}</p>
+                  <ExternalLink className="absolute top-2 right-2 h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </Card>
+              </a>
             ))}
           </div>
         </div>
