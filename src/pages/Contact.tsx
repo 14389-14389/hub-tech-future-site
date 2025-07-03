@@ -48,8 +48,8 @@ const Contact = () => {
   const contactInfo = [
     {
       title: "WhatsApp",
-      value: "+254 XXX XXX XXX",
-      link: "https://wa.me/254XXXXXXXXX",
+      value: "+254 726 894 129",
+      link: "https://wa.me/254726894129",
       icon: "📱"
     },
     {
@@ -198,7 +198,7 @@ const Contact = () => {
                   Get instant responses via WhatsApp for urgent queries
                 </p>
                 <a 
-                  href="https://wa.me/254XXXXXXXXX?text=Hi%20TechieHub%2C%20I'm%20interested%20in%20your%20services" 
+                  href="https://wa.me/254726894129?text=Hi%20TechieHub%2C%20I'm%20interested%20in%20your%20services" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >

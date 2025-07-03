@@ -82,7 +82,7 @@ const Footer = () => {
               </a>
             </div>
             <a 
-              href="https://wa.me/254XXXXXXXXX" 
+              href="https://wa.me/254726894129" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
