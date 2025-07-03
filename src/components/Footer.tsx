@@ -97,7 +97,7 @@ const Footer = () => {
             © {currentYear} TechieHub. All rights reserved.
           </p>
           <p className="text-sm text-gray-400">
-            Proudly built by TechieHub
+            Proudly built by TechieHub Foundation.
           </p>
         </div>
       </div>

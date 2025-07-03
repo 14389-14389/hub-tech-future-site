@@ -121,7 +121,7 @@ const About = () => {
             <h2 className="text-3xl font-bold text-foreground mb-4">Our Team</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               A diverse group of technology enthusiasts, innovators, and problem-solvers 
-              dedicated to delivering exceptional results
+              dedicated to delivering exceptional results.Pioneered and lead by Kevin Muli and his close friend Alexander Kawewa.
             </p>
           </div>
           

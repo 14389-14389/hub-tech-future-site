@@ -55,7 +55,7 @@ const Contact = () => {
     {
       title: "Email",
       value: "hello@techiehub.co.ke",
-      link: "mailto:hello@techiehub.co.ke",
+      link: "mailto:kevinmuli047@gmail.com",
       icon: "📧"
     },
     {
