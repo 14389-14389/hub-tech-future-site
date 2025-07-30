@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Link } from "react-router-dom";
-import { ArrowRight, ExternalLink, Github, Mail, MessageSquare, MapPin, Code, Database, Globe, Smartphone } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, Mail, MessageSquare, MapPin, Code, Database, Globe, Smartphone, BookOpen, Users, Star, Calendar, Clock, TrendingUp } from "lucide-react";
 import heroBackground from "@/assets/hero-bg.jpg";
 
 const Home = () => {
@@ -46,14 +46,83 @@ const Home = () => {
   ];
 
   const skills = [
-    { name: "React & Next.js", icon: "⚛️" },
-    { name: "Supabase", icon: "⚡" },
-    { name: "Firebase", icon: "🔥" },
-    { name: "PostgreSQL", icon: "🐘" },
-    { name: "TypeScript", icon: "🔷" },
-    { name: "Node.js", icon: "🟢" },
-    { name: "Python", icon: "🐍" },
-    { name: "Mobile Dev", icon: "📱" }
+    { name: "React & Next.js", icon: "⚛️", level: "Advanced" },
+    { name: "Supabase", icon: "⚡", level: "Advanced" },
+    { name: "Firebase", icon: "🔥", level: "Intermediate" },
+    { name: "PostgreSQL", icon: "🐘", level: "Advanced" },
+    { name: "TypeScript", icon: "🔷", level: "Intermediate" },
+    { name: "Node.js", icon: "🟢", level: "Advanced" },
+    { name: "Python", icon: "🐍", level: "Intermediate" },
+    { name: "Mobile Dev", icon: "📱", level: "Intermediate" }
+  ];
+
+  const trainingServices = [
+    {
+      title: "Web Development",
+      icon: "👨‍💻",
+      description: "Learn React, HTML, CSS, JavaScript, and modern frameworks to build professional websites.",
+      topics: ["React Fundamentals", "JavaScript ES6+", "Responsive Design", "API Integration"]
+    },
+    {
+      title: "Graphic Design",
+      icon: "🎨",
+      description: "Master Adobe Illustrator, Canva, Figma, and design principles for visual communication.",
+      topics: ["Adobe Creative Suite", "UI/UX Design", "Brand Identity", "Digital Illustration"]
+    },
+    {
+      title: "Networking & Systems",
+      icon: "🌐",
+      description: "Understand computer networks, system administration, and IT infrastructure management.",
+      topics: ["Network Fundamentals", "System Administration", "Cybersecurity Basics", "Server Management"]
+    },
+    {
+      title: "Digital Skills",
+      icon: "🔧",
+      description: "Essential tech skills including digital literacy, productivity tools, and online presence.",
+      topics: ["Digital Literacy", "Microsoft Office", "Social Media Management", "Online Business"]
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: "Sarah Wanjiku",
+      role: "Frontend Developer",
+      content: "Kevin's React course transformed my career. His teaching style is clear and practical, and now I'm working as a frontend developer!",
+      avatar: "SW"
+    },
+    {
+      name: "James Ochieng",
+      role: "Graphic Designer",
+      content: "The graphic design training at TechieHub gave me the skills to start my own design agency. Kevin is an exceptional mentor.",
+      avatar: "JO"
+    },
+    {
+      name: "Mary Njeri",
+      role: "IT Student",
+      content: "Kevin's networking classes helped me understand complex concepts easily. His passion for teaching really shows.",
+      avatar: "MN"
+    }
+  ];
+
+  const blogPosts = [
+    {
+      title: "How I Teach Tech from Kenya to the World",
+      excerpt: "Discover my journey of building TechieHub and empowering African tech talent through online education.",
+      date: "January 15, 2025",
+      readTime: "5 min read"
+    },
+    {
+      title: "5 Tools I Use to Teach Students Remotely",
+      excerpt: "Essential tools and platforms that have revolutionized my online teaching methodology and student engagement.",
+      date: "January 10, 2025",
+      readTime: "3 min read"
+    },
+    {
+      title: "Building Scalable Web Apps with Supabase",
+      excerpt: "A comprehensive guide to using Supabase for building modern, scalable web applications with real-time features.",
+      date: "January 5, 2025",
+      readTime: "8 min read"
+    }
   ];
 
   return (
@@ -81,16 +150,24 @@ const Home = () => {
                 className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-6 shadow-glow rounded-2xl"
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Explore Projects
+                Hire Me
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
                 className="border-techiehub-light text-techiehub-light hover:bg-techiehub-light hover:text-techiehub-dark text-lg px-8 py-6 rounded-2xl"
+                onClick={() => document.getElementById('training')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Join My Classes
+              </Button>
+              <Button 
+                variant="secondary" 
+                size="lg" 
+                className="text-lg px-8 py-6 rounded-2xl"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Let's Connect
+                View Projects
               </Button>
             </div>
           </div>
@@ -119,12 +196,13 @@ const Home = () => {
                 </p>
                 <p>
                   As the founder of <strong>TechieHub</strong>, I'm on a mission to elevate African tech talent 
-                  and create opportunities for developers across the continent. My experience spans full-stack 
-                  development, database design, and building scalable applications.
+                  and create opportunities for developers across the continent. I also teach coding, graphic design, 
+                  networking, and other digital skills to students and professionals.
                 </p>
                 <p>
-                  I specialize in modern web technologies including <strong>React, Supabase, Firebase, 
-                  and PostgreSQL</strong>, with a focus on creating user-centered solutions that drive business growth.
+                  My experience spans full-stack development, database design, and building scalable applications 
+                  using modern technologies like <strong>React, Supabase, Firebase, and PostgreSQL</strong>, 
+                  with a focus on creating user-centered solutions that drive business growth.
                 </p>
                 <div className="flex items-center space-x-2 text-techiehub-primary">
                   <MapPin className="h-5 w-5" />
@@ -139,10 +217,19 @@ const Home = () => {
                   {skills.map((skill) => (
                     <div 
                       key={skill.name}
-                      className="flex items-center space-x-2 p-3 bg-card rounded-xl hover:shadow-card transition-all duration-300"
+                      className="flex flex-col space-y-2 p-4 bg-card rounded-xl hover:shadow-card transition-all duration-300 border border-techiehub-primary/10"
                     >
-                      <span className="text-xl">{skill.icon}</span>
-                      <span className="text-sm font-medium text-foreground">{skill.name}</span>
+                      <div className="flex items-center space-x-2">
+                        <span className="text-xl">{skill.icon}</span>
+                        <span className="text-sm font-medium text-foreground">{skill.name}</span>
+                      </div>
+                      <span className={`text-xs px-2 py-1 rounded-full self-start ${
+                        skill.level === 'Advanced' 
+                          ? 'bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100' 
+                          : 'bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100'
+                      }`}>
+                        {skill.level}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -178,8 +265,67 @@ const Home = () => {
         </div>
       </section>
 
+      {/* TechieHub Training Section */}
+      <section className="py-20 bg-background" id="training">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              What I <span className="bg-gradient-primary bg-clip-text text-transparent">Teach</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Empowering the next generation of African tech talent through hands-on training in cutting-edge technologies and digital skills.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {trainingServices.map((service) => (
+              <Card 
+                key={service.title} 
+                className="group hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-card/50 backdrop-blur-sm rounded-2xl border border-techiehub-primary/10"
+              >
+                <CardHeader className="text-center pb-4">
+                  <div className="text-4xl mb-4">{service.icon}</div>
+                  <CardTitle className="text-xl text-foreground group-hover:text-techiehub-primary transition-colors">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
+                    {service.description}
+                  </p>
+                  <div className="space-y-2">
+                    <h4 className="text-sm font-semibold text-foreground">Key Topics:</h4>
+                    <ul className="space-y-1">
+                      {service.topics.map((topic) => (
+                        <li key={topic} className="text-xs text-muted-foreground flex items-center">
+                          <div className="w-1.5 h-1.5 bg-techiehub-primary rounded-full mr-2"></div>
+                          {topic}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center">
+            <Button 
+              size="lg" 
+              className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-6 shadow-glow rounded-2xl"
+              asChild
+            >
+              <a href="https://wa.me/254726894129?text=Hi Kevin! I'm interested in joining your tech training classes. Can you tell me more?" target="_blank" rel="noopener noreferrer">
+                Join TechieHub Training
+                <Users className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
-      <section className="py-20 bg-background" id="projects">
+      <section className="py-20 bg-muted/30" id="projects">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -262,6 +408,109 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              What My <span className="bg-gradient-primary bg-clip-text text-transparent">Students Say</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Hear from students and clients who have transformed their careers through TechieHub training.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial) => (
+              <Card 
+                key={testimonial.name} 
+                className="p-6 bg-card/50 backdrop-blur-sm rounded-2xl border border-techiehub-primary/10"
+              >
+                <div className="flex items-center space-x-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground italic mb-4 leading-relaxed">
+                  "{testimonial.content}"
+                </p>
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center text-white font-semibold">
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Latest <span className="bg-gradient-primary bg-clip-text text-transparent">Insights</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Thoughts on technology, education, and building the future of African tech talent.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {blogPosts.map((post) => (
+              <Card 
+                key={post.title} 
+                className="group hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-card/50 backdrop-blur-sm rounded-2xl border border-techiehub-primary/10"
+              >
+                <CardHeader>
+                  <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-2">
+                    <div className="flex items-center space-x-1">
+                      <Calendar className="h-4 w-4" />
+                      <span>{post.date}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Clock className="h-4 w-4" />
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
+                  <CardTitle className="text-xl text-foreground group-hover:text-techiehub-primary transition-colors">
+                    {post.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                  <Button 
+                    variant="ghost" 
+                    className="p-0 h-auto text-techiehub-primary hover:text-techiehub-primary/80"
+                  >
+                    Read More
+                    <ArrowRight className="ml-1 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-techiehub-primary text-techiehub-primary hover:bg-techiehub-primary hover:text-white rounded-2xl"
+            >
+              View All Posts
+              <BookOpen className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-20 bg-gradient-dark rounded-t-3xl" id="contact">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
@@ -273,7 +522,7 @@ const Home = () => {
             or just want to connect with the TechieHub community—I'd love to hear from you.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
             <a 
               href="https://wa.me/254726894129?text=Hi Kevin! I'd love to discuss a project with you."
               target="_blank"
@@ -321,6 +570,19 @@ const Home = () => {
                 <Globe className="h-8 w-8 text-blue-300 mx-auto mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-semibold text-techiehub-light mb-1">LinkedIn</h3>
                 <p className="text-gray-300 text-sm">kevin-muli</p>
+              </Card>
+            </a>
+            
+            <a 
+              href="https://tiktok.com/@kevinmuli"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
+              <Card className="p-6 bg-techiehub-light/10 border-techiehub-light/20 hover:bg-techiehub-light/20 transition-all duration-300 rounded-2xl">
+                <TrendingUp className="h-8 w-8 text-pink-400 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                <h3 className="text-lg font-semibold text-techiehub-light mb-1">TikTok</h3>
+                <p className="text-gray-300 text-sm">@kevinmuli</p>
               </Card>
             </a>
           </div>

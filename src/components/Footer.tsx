@@ -94,10 +94,10 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {currentYear} TechieHub. All rights reserved.
+            © {currentYear} TechieHub Foundation — Building Africa's Digital Future.
           </p>
           <p className="text-sm text-gray-400">
-            Proudly built by TechieHub Foundation.
+            Proudly built with 💚 by Kevin Muli.
           </p>
         </div>
       </div>
