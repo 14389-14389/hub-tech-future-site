@@ -37,14 +37,17 @@ All colors MUST be HSL.
     --ring: 211 100% 50%;
 
     /* TechieHub Brand Colors */
-    --techiehub-primary: 211 100% 50%; /* Electric blue #007BFF */
+    --techiehub-primary: 160 84% 39%; /* Emerald #059669 */
+    --techiehub-secondary: 217 91% 60%; /* Indigo #3B82F6 */
     --techiehub-dark: 210 20% 8%; /* Black #0D1117 */
     --techiehub-light: 0 0% 100%; /* White #FFFFFF */
+    --techiehub-accent: 142 76% 36%; /* Green accent */
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--techiehub-primary)), hsl(260 100% 60%));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--techiehub-primary)), hsl(var(--techiehub-secondary)));
     --gradient-dark: linear-gradient(135deg, hsl(var(--techiehub-dark)), hsl(220 30% 15%));
-    --gradient-glow: linear-gradient(135deg, hsl(var(--techiehub-primary) / 0.1), hsl(260 100% 60% / 0.1));
+    --gradient-glow: linear-gradient(135deg, hsl(var(--techiehub-primary) / 0.1), hsl(var(--techiehub-secondary) / 0.1));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--techiehub-primary)), hsl(var(--techiehub-secondary)), hsl(260 100% 60%));
     
     /* Effects */
     --shadow-glow: 0 0 40px hsl(var(--techiehub-primary) / 0.3);
