@@ -152,7 +152,7 @@ const Home = () => {
             <div className="order-1 lg:order-2 flex justify-center">
               <div className="relative">
                 <Avatar className="w-80 h-80 border-4 border-techiehub-primary shadow-2xl">
-                  <AvatarImage src="/api/placeholder/400/400" alt="Kevin Muli" />
+                  <AvatarImage src="/lovable-uploads/e478604e-c1e6-49ff-addf-e42fb0b5256b.png" alt="Kevin Muli" />
                   <AvatarFallback className="text-6xl font-bold bg-gradient-primary text-white">KM</AvatarFallback>
                 </Avatar>
                 <div className="absolute -bottom-4 -right-4 bg-techiehub-primary text-white p-4 rounded-2xl shadow-xl">
