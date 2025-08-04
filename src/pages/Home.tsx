@@ -265,61 +265,170 @@ const Home = () => {
         </div>
       </section>
 
-      {/* TechieHub Training Section */}
-      <section className="py-20 bg-background" id="training">
+      {/* Services Section */}
+      <section className="py-20 bg-background" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              What I <span className="bg-gradient-primary bg-clip-text text-transparent">Teach</span>
+              Our <span className="bg-gradient-primary bg-clip-text text-transparent">Services</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Empowering the next generation of African tech talent through hands-on training in cutting-edge technologies and digital skills.
+              We offer a comprehensive range of IT solutions and training programs to help businesses and individuals thrive in today's digital landscape.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            {trainingServices.map((service) => (
-              <Card 
-                key={service.title} 
-                className="group hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-card/50 backdrop-blur-sm rounded-2xl border border-techiehub-primary/10"
-              >
-                <CardHeader className="text-center pb-4">
-                  <div className="text-4xl mb-4">{service.icon}</div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {[
+              { 
+                icon: "🔧", 
+                title: "Bespoke Software Solutions", 
+                desc: "Custom accounting systems, ERP software, and solutions for cooperative societies and MicroFinance.",
+                category: "Development"
+              },
+              { 
+                icon: "🛡️", 
+                title: "Cybersecurity Audit", 
+                desc: "Comprehensive security assessment to identify and address vulnerabilities in your systems.",
+                category: "Security"
+              },
+              { 
+                icon: "🔍", 
+                title: "Vulnerability Management", 
+                desc: "Proactive identification and remediation of security weaknesses in your IT infrastructure.",
+                category: "Security"
+              },
+              { 
+                icon: "👨‍💼", 
+                title: "Virtual CISO", 
+                desc: "Expert security leadership without the cost of a full-time Chief Information Security Officer.",
+                category: "Consulting"
+              },
+              { 
+                icon: "📱", 
+                title: "Web/Mobile Development", 
+                desc: "Custom applications built with modern technologies for seamless user experience.",
+                category: "Development"
+              },
+              { 
+                icon: "🔬", 
+                title: "Forensic Data Analytics", 
+                desc: "Advanced data analysis techniques to detect fraud and investigate digital evidence.",
+                category: "Analytics"
+              }
+            ].map((service, index) => (
+              <Card key={index} className="group hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-card/50 backdrop-blur-sm rounded-2xl border border-techiehub-primary/10">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="text-3xl">{service.icon}</div>
+                    <Badge variant="secondary" className="bg-techiehub-primary text-white">
+                      {service.category}
+                    </Badge>
+                  </div>
                   <CardTitle className="text-xl text-foreground group-hover:text-techiehub-primary transition-colors">
                     {service.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
-                    {service.description}
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {service.desc}
                   </p>
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-foreground">Key Topics:</h4>
-                    <ul className="space-y-1">
-                      {service.topics.map((topic) => (
-                        <li key={topic} className="text-xs text-muted-foreground flex items-center">
-                          <div className="w-1.5 h-1.5 bg-techiehub-primary rounded-full mr-2"></div>
-                          {topic}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="flex gap-2">
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      className="flex-1 border-techiehub-primary/30 text-techiehub-primary hover:bg-techiehub-primary hover:text-white"
+                    >
+                      Learn More
+                    </Button>
+                    <Button 
+                      size="sm"
+                      className="flex-1 bg-gradient-primary hover:opacity-90 text-white"
+                      onClick={() => window.open('https://wa.me/254726894129?text=Hi%20Kevin!%20I%27m%20interested%20in%20' + service.title, '_blank')}
+                    >
+                      Request Service
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-          
-          <div className="text-center">
-            <Button 
-              size="lg" 
-              className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-6 shadow-glow rounded-2xl"
-              asChild
-            >
-              <a href="https://wa.me/254726894129?text=Hi Kevin! I'm interested in joining your tech training classes. Can you tell me more?" target="_blank" rel="noopener noreferrer">
-                Join TechieHub Training
-                <Users className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
+
+          {/* Training Section */}
+          <div className="bg-gradient-primary rounded-2xl p-8 text-white">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold mb-4">TechieHub Training Programs</h3>
+              <p className="text-lg opacity-90">
+                Learn in-demand tech skills with hands-on training from Kenya to the world.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {trainingServices.map((course, index) => (
+                <Card key={index} className="p-4 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all duration-300 rounded-2xl">
+                  <div className="text-3xl mb-3">{course.icon}</div>
+                  <h4 className="text-lg font-bold mb-2">{course.title}</h4>
+                  <p className="text-sm opacity-90 mb-4">{course.description}</p>
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    className="w-full border-white/30 text-white hover:bg-white hover:text-techiehub-primary"
+                    onClick={() => window.open('https://wa.me/254726894129?text=Hi%20Kevin!%20I%27m%20interested%20in%20learning%20' + course.title, '_blank')}
+                  >
+                    Join Class
+                  </Button>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Unlock Your <span className="bg-gradient-primary bg-clip-text text-transparent">Potential</span> with TechieHub
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                We combine technical expertise with real-world experience to deliver solutions and training that not only solve problems but create opportunities for growth and innovation.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                {[
+                  "Dedicated support team",
+                  "Transparent pricing",
+                  "Rapid response times",
+                  "Tailored solutions",
+                  "Ongoing maintenance", 
+                  "Technology expertise"
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-gradient-primary rounded-full"></div>
+                    <span className="text-foreground font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <Button 
+                size="lg" 
+                className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-6 shadow-glow rounded-2xl"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Discuss Your Project
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+            
+            <div className="relative">
+              <Card className="bg-gradient-primary text-white p-8 rounded-2xl text-center">
+                <div className="text-6xl font-bold mb-2">5+</div>
+                <div className="text-lg mb-6">Years of Excellence</div>
+                <div className="text-sm opacity-90 mb-8">& Industry Experience</div>
+                <div className="text-2xl font-bold">Expert Solutions</div>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -413,18 +522,61 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              What My <span className="bg-gradient-primary bg-clip-text text-transparent">Students Say</span>
+              What Our <span className="bg-gradient-primary bg-clip-text text-transparent">Clients Say</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Hear from students and clients who have transformed their careers through TechieHub training.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Hear from our satisfied clients across Kenya who have transformed their businesses with our technology solutions.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Grace Wanjiku",
+                role: "CEO",
+                company: "Wanjiku Enterprises Ltd",
+                testimonial: "TechieHub transformed our accounting system completely. The bespoke software they developed has streamlined our operations and improved our efficiency by 300%.",
+                avatar: "GW"
+              },
+              {
+                name: "Joseph Macharia", 
+                role: "Managing Director",
+                company: "Desire Ventures Ltd",
+                testimonial: "I'm proud to say TechieHub delivered a sleek, professional website that perfectly showcases our water services and supports our growth goals.",
+                avatar: "JM"
+              },
+              {
+                name: "Benard Ogio",
+                role: "Senior Partner", 
+                company: "ElitePro CPA & Associates",
+                testimonial: "Exceptional web development service! Our new website has increased client inquiries by 250%. The team was professional and delivered on time.",
+                avatar: "BO"
+              },
+              {
+                name: "Victor Muita",
+                role: "Developer",
+                company: "Victor.Dev", 
+                testimonial: "The mobile app they developed for our coffee business has revolutionized how we serve our customers. Sales have increased significantly since launch.",
+                avatar: "VM"
+              },
+              {
+                name: "Timothy K.",
+                role: "Operations Manager",
+                company: "Tilokilo Supplies Ltd",
+                testimonial: "Their digital forensics service helped us recover crucial financial data. The team's expertise and professionalism were outstanding throughout the process.",
+                avatar: "TK"
+              },
+              {
+                name: "David Kimani",
+                role: "Director",
+                company: "Kimani Construction Ltd", 
+                testimonial: "The IT support and infrastructure audit provided invaluable insights. Our systems are now more secure and efficient than ever before.",
+                avatar: "DK"
+              }
+            ].map((testimonial, index) => (
               <Card 
-                key={testimonial.name} 
-                className="p-6 bg-card/50 backdrop-blur-sm rounded-2xl border border-techiehub-primary/10"
+                key={index} 
+                className="p-6 bg-card/50 backdrop-blur-sm rounded-2xl border border-techiehub-primary/10 hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex items-center space-x-1 mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -432,15 +584,16 @@ const Home = () => {
                   ))}
                 </div>
                 <p className="text-muted-foreground italic mb-4 leading-relaxed">
-                  "{testimonial.content}"
+                  "{testimonial.testimonial}"
                 </p>
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-semibold">
                     {testimonial.avatar}
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">{testimonial.name}</p>
                     <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    <p className="text-xs text-muted-foreground">{testimonial.company}</p>
                   </div>
                 </div>
               </Card>
@@ -449,63 +602,130 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Blog Section */}
+      {/* Latest Updates Section */}
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Latest <span className="bg-gradient-primary bg-clip-text text-transparent">Insights</span>
+              Latest <span className="bg-gradient-primary bg-clip-text text-transparent">Updates</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Thoughts on technology, education, and building the future of African tech talent.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Stay informed with our latest news, project launches, and announcements.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <Card 
-                key={post.title} 
-                className="group hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-card/50 backdrop-blur-sm rounded-2xl border border-techiehub-primary/10"
-              >
-                <CardHeader>
-                  <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-2">
-                    <div className="flex items-center space-x-1">
-                      <Calendar className="h-4 w-4" />
-                      <span>{post.date}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Clock className="h-4 w-4" />
-                      <span>{post.readTime}</span>
-                    </div>
-                  </div>
-                  <CardTitle className="text-xl text-foreground group-hover:text-techiehub-primary transition-colors">
-                    {post.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                  <Button 
-                    variant="ghost" 
-                    className="p-0 h-auto text-techiehub-primary hover:text-techiehub-primary/80"
-                  >
-                    Read More
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+
+          <div className="max-w-4xl mx-auto mb-20">
+            <Card className="p-8 bg-gradient-glow border-techiehub-primary/20 text-center rounded-2xl">
+              <div className="text-6xl mb-6">🚀</div>
+              <h3 className="text-2xl font-bold mb-4 text-foreground">Coming Soon: Exciting Updates!</h3>
+              <p className="text-lg text-muted-foreground mb-8">
+                We're working on some amazing new projects and training programs. Check back soon for the latest news about TechieHub's expansion and new service offerings.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  className="bg-gradient-primary hover:opacity-90 text-white rounded-2xl"
+                  onClick={() => window.open('https://wa.me/254726894129?text=Hi%20Kevin!%20I%27d%20like%20to%20stay%20updated%20on%20TechieHub%20news.', '_blank')}
+                >
+                  Get Notified
+                </Button>
+                <Button 
+                  variant="outline"
+                  className="border-techiehub-primary text-techiehub-primary hover:bg-techiehub-primary hover:text-white rounded-2xl"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Contact Us
+                </Button>
+              </div>
+            </Card>
           </div>
-          
-          <div className="text-center mt-12">
+
+          {/* Blog Preview */}
+          <div>
+            <div className="text-center mb-12">
+              <h3 className="text-2xl font-bold mb-4 text-foreground">Latest Insights</h3>
+              <p className="text-lg text-muted-foreground">
+                Tech insights, tutorials, and stories from the TechieHub journey.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {blogPosts.map((post) => (
+                <Card 
+                  key={post.title} 
+                  className="group hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-card/50 backdrop-blur-sm rounded-2xl border border-techiehub-primary/10"
+                >
+                  <div className="h-48 bg-gradient-primary flex items-center justify-center text-white text-6xl rounded-t-2xl">
+                    📚
+                  </div>
+                  <CardHeader>
+                    <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-2">
+                      <div className="flex items-center space-x-1">
+                        <Calendar className="h-4 w-4" />
+                        <span>{post.date}</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <Clock className="h-4 w-4" />
+                        <span>{post.readTime}</span>
+                      </div>
+                    </div>
+                    <CardTitle className="text-xl text-foreground group-hover:text-techiehub-primary transition-colors">
+                      {post.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                    <Button 
+                      variant="ghost" 
+                      className="p-0 h-auto text-techiehub-primary hover:text-techiehub-primary/80"
+                    >
+                      Read More
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-techiehub-primary text-techiehub-primary hover:bg-techiehub-primary hover:text-white rounded-2xl"
+              >
+                View All Articles
+                <BookOpen className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ready to Transform Section */}
+      <section className="py-20 bg-gradient-primary text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
+            Partner with us for innovative technology solutions and training programs designed for your success.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-techiehub-primary text-techiehub-primary hover:bg-techiehub-primary hover:text-white rounded-2xl"
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-techiehub-primary hover:border-white rounded-2xl"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              View All Posts
-              <BookOpen className="ml-2 h-5 w-5" />
+              Contact Us
+            </Button>
+            <Button 
+              size="lg"
+              className="bg-white text-techiehub-primary hover:bg-white/90 rounded-2xl"
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Explore Services
             </Button>
           </div>
         </div>
