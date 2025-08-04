@@ -283,37 +283,43 @@ const Home = () => {
                 icon: "🔧", 
                 title: "Bespoke Software Solutions", 
                 desc: "Custom accounting systems, ERP software, and solutions for cooperative societies and MicroFinance.",
-                category: "Development"
+                category: "Development",
+                details: "We develop tailored software solutions including: Complete accounting systems with financial reporting, inventory management, and multi-user access. ERP platforms integrating HR, finance, and operations. Specialized systems for cooperative societies with member management, loan tracking, and dividend calculations. MicroFinance solutions with loan origination, repayment tracking, and risk assessment tools."
               },
               { 
                 icon: "🛡️", 
                 title: "Cybersecurity Audit", 
                 desc: "Comprehensive security assessment to identify and address vulnerabilities in your systems.",
-                category: "Security"
+                category: "Security",
+                details: "Our cybersecurity audit includes: Network security assessment and penetration testing. Application security review and code analysis. Infrastructure security evaluation. Compliance assessment for industry standards. Detailed vulnerability reports with prioritized remediation plans. Security policies and procedures development."
               },
               { 
                 icon: "🔍", 
                 title: "Vulnerability Management", 
                 desc: "Proactive identification and remediation of security weaknesses in your IT infrastructure.",
-                category: "Security"
+                category: "Security", 
+                details: "Comprehensive vulnerability management covering: Automated vulnerability scanning and monitoring. Risk assessment and prioritization. Patch management and deployment strategies. Configuration management and hardening. Continuous monitoring and threat intelligence. Incident response planning and execution."
               },
               { 
                 icon: "👨‍💼", 
                 title: "Virtual CISO", 
                 desc: "Expert security leadership without the cost of a full-time Chief Information Security Officer.",
-                category: "Consulting"
+                category: "Consulting",
+                details: "Virtual CISO services include: Strategic security planning and roadmap development. Security governance and risk management. Compliance management and audit support. Security awareness training and culture development. Vendor security assessments. Board-level security reporting and communication."
               },
               { 
                 icon: "📱", 
                 title: "Web/Mobile Development", 
                 desc: "Custom applications built with modern technologies for seamless user experience.",
-                category: "Development"
+                category: "Development",
+                details: "Full-stack development services: Responsive web applications using React, Next.js, and modern frameworks. Mobile app development for iOS and Android. E-commerce platforms with payment integration. Content management systems and admin dashboards. API development and third-party integrations. Performance optimization and SEO implementation."
               },
               { 
                 icon: "🔬", 
                 title: "Forensic Data Analytics", 
                 desc: "Advanced data analysis techniques to detect fraud and investigate digital evidence.",
-                category: "Analytics"
+                category: "Analytics",
+                details: "Digital forensics and data analytics: Financial fraud detection and investigation. Digital evidence collection and preservation. Data recovery from damaged or corrupted systems. Network traffic analysis and intrusion investigation. Mobile device forensics and data extraction. Expert witness testimony and legal support."
               }
             ].map((service, index) => (
               <Card key={index} className="group hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-card/50 backdrop-blur-sm rounded-2xl border border-techiehub-primary/10">
@@ -332,14 +338,15 @@ const Home = () => {
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     {service.desc}
                   </p>
+                  <details className="mb-6">
+                    <summary className="cursor-pointer text-techiehub-primary font-semibold hover:text-techiehub-primary/80 mb-3">
+                      Learn More Details
+                    </summary>
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-3 p-3 bg-muted/30 rounded-lg">
+                      {service.details}
+                    </p>
+                  </details>
                   <div className="flex gap-2">
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      className="flex-1 border-techiehub-primary/30 text-techiehub-primary hover:bg-techiehub-primary hover:text-white"
-                    >
-                      Learn More
-                    </Button>
                     <Button 
                       size="sm"
                       className="flex-1 bg-gradient-primary hover:opacity-90 text-white"
