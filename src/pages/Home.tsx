@@ -5,6 +5,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Link } from "react-router-dom";
 import { ArrowRight, ExternalLink, Github, Mail, MessageSquare, MapPin, Code, Database, Globe, Smartphone, BookOpen, Users, Star, Calendar, Clock, TrendingUp } from "lucide-react";
 import heroBackground from "@/assets/hero-bg.jpg";
+import { scrollToSection, SECTION_IDS } from "@/utils/navigation";
+import { openWhatsAppChat, WHATSAPP_MESSAGES } from "@/utils/whatsapp";
 
 const Home = () => {
   const projects = [
@@ -129,6 +131,7 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section 
+        id={SECTION_IDS.HERO}
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBackground})` }}
       >
@@ -148,7 +151,7 @@ const Home = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-6 shadow-glow rounded-2xl"
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => openWhatsAppChat(WHATSAPP_MESSAGES.GENERAL_INQUIRY)}
               >
                 Hire Me
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -157,7 +160,7 @@ const Home = () => {
                 variant="outline" 
                 size="lg" 
                 className="border-techiehub-light text-techiehub-light hover:bg-techiehub-light hover:text-techiehub-dark text-lg px-8 py-6 rounded-2xl"
-                onClick={() => document.getElementById('training')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => scrollToSection(SECTION_IDS.TRAINING)}
               >
                 Join My Classes
               </Button>
@@ -165,7 +168,7 @@ const Home = () => {
                 variant="secondary" 
                 size="lg" 
                 className="text-lg px-8 py-6 rounded-2xl"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => scrollToSection(SECTION_IDS.PROJECTS)}
               >
                 View Projects
               </Button>
@@ -182,7 +185,7 @@ const Home = () => {
       </section>
 
       {/* About Me Section */}
-      <section className="py-20 bg-background" id="about">
+      <section className="py-20 bg-background" id={SECTION_IDS.ABOUT}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
@@ -266,7 +269,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-background" id="services">
+      <section className="py-20 bg-background" id={SECTION_IDS.SERVICES}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -350,7 +353,7 @@ const Home = () => {
                     <Button 
                       size="sm"
                       className="flex-1 bg-gradient-primary hover:opacity-90 text-white"
-                      onClick={() => window.open('https://wa.me/254726894129?text=Hi%20Kevin!%20I%27m%20interested%20in%20' + service.title, '_blank')}
+                      onClick={() => openWhatsAppChat(WHATSAPP_MESSAGES.SERVICE_INQUIRY(service.title))}
                     >
                       Request Service
                     </Button>
@@ -361,7 +364,7 @@ const Home = () => {
           </div>
 
           {/* Training Section */}
-          <div className="bg-gradient-primary rounded-2xl p-8 text-white">
+          <div className="bg-gradient-primary rounded-2xl p-8 text-white" id={SECTION_IDS.TRAINING}>
             <div className="text-center mb-8">
               <h3 className="text-3xl font-bold mb-4">TechieHub Training Programs</h3>
               <p className="text-lg opacity-90">
@@ -379,7 +382,7 @@ const Home = () => {
                     variant="outline" 
                     size="sm"
                     className="w-full border-white/30 text-white hover:bg-white hover:text-techiehub-primary"
-                    onClick={() => window.open('https://wa.me/254726894129?text=Hi%20Kevin!%20I%27m%20interested%20in%20learning%20' + course.title, '_blank')}
+                    onClick={() => openWhatsAppChat(WHATSAPP_MESSAGES.TRAINING_INQUIRY(course.title))}
                   >
                     Join Class
                   </Button>
@@ -421,7 +424,7 @@ const Home = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-6 shadow-glow rounded-2xl"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => scrollToSection(SECTION_IDS.CONTACT)}
               >
                 Discuss Your Project
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -441,7 +444,7 @@ const Home = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 bg-muted/30" id="projects">
+      <section className="py-20 bg-muted/30" id={SECTION_IDS.PROJECTS}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -525,7 +528,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background" id={SECTION_IDS.TESTIMONIALS}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -610,7 +613,7 @@ const Home = () => {
       </section>
 
       {/* Latest Updates Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-muted/30" id={SECTION_IDS.BLOG}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -631,14 +634,14 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   className="bg-gradient-primary hover:opacity-90 text-white rounded-2xl"
-                  onClick={() => window.open('https://wa.me/254726894129?text=Hi%20Kevin!%20I%27d%20like%20to%20stay%20updated%20on%20TechieHub%20news.', '_blank')}
+                  onClick={() => openWhatsAppChat(WHATSAPP_MESSAGES.NEWSLETTER_SIGNUP)}
                 >
                   Get Notified
                 </Button>
                 <Button 
                   variant="outline"
                   className="border-techiehub-primary text-techiehub-primary hover:bg-techiehub-primary hover:text-white rounded-2xl"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => scrollToSection(SECTION_IDS.CONTACT)}
                 >
                   Contact Us
                 </Button>
@@ -723,14 +726,14 @@ const Home = () => {
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-techiehub-primary hover:border-white rounded-2xl"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollToSection(SECTION_IDS.CONTACT)}
             >
               Contact Us
             </Button>
             <Button 
               size="lg"
               className="bg-white text-techiehub-primary hover:bg-white/90 rounded-2xl"
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollToSection(SECTION_IDS.SERVICES)}
             >
               Explore Services
             </Button>
@@ -739,7 +742,7 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-gradient-dark rounded-t-3xl" id="contact">
+      <section className="py-20 bg-gradient-dark rounded-t-3xl" id={SECTION_IDS.CONTACT}>
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-techiehub-light mb-6">
             Let's Build Something Amazing Together
