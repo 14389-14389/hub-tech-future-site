@@ -190,7 +190,7 @@ const Contact = () => {
             </Card>
 
             {/* Quick WhatsApp Contact */}
-            <Card className="bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 p-6">
+            <Card className="bg-techiehub-primary/5 border-techiehub-primary/20 p-6">
               <div className="text-center">
                 <div className="text-4xl mb-4">💬</div>
                 <h3 className="text-xl font-bold text-foreground mb-2">Need Immediate Help?</h3>
@@ -202,7 +202,7 @@ const Contact = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  <Button className="bg-green-600 hover:bg-green-700 text-white">
+                  <Button className="bg-techiehub-primary hover:opacity-90 text-techiehub-light">
                     Message on WhatsApp
                   </Button>
                 </a>

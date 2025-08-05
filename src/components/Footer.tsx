@@ -16,11 +16,11 @@ const Footer = () => {
               </div>
               <span className="text-xl font-bold">TechieHub</span>
             </div>
-            <p className="text-gray-300 mb-4 max-w-md">
+            <p className="text-muted-foreground mb-4 max-w-md">
               Universal IT Solutions — Building the Future of Technology. 
               A new-age digital tech company born to solve modern IT problems with future-ready solutions.
             </p>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-muted-foreground/80">
               Based in Nairobi, Kenya — Serving the World
             </p>
           </div>
@@ -30,22 +30,22 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-primary transition-colors">
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-primary transition-colors">
+                <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-primary transition-colors">
+                <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-primary transition-colors">
+                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
                   Contact
                 </Link>
               </li>
@@ -60,7 +60,7 @@ const Footer = () => {
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
@@ -68,7 +68,7 @@ const Footer = () => {
                 href="https://github.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Github className="w-6 h-6" />
               </a>
@@ -76,7 +76,7 @@ const Footer = () => {
                 href="https://twitter.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Twitter className="w-6 h-6" />
               </a>
@@ -85,18 +85,18 @@ const Footer = () => {
               href="https://wa.me/254726894129" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
+              className="inline-block bg-techiehub-primary hover:opacity-90 text-techiehub-light px-4 py-2 rounded-lg transition-all"
             >
               WhatsApp Us
             </a>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-muted-foreground text-sm mb-4 md:mb-0">
             © {currentYear} TechieHub Foundation — Building Africa's Digital Future.
           </p>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-muted-foreground">
             Proudly built with 💚 by Kevin Muli.
           </p>
         </div>

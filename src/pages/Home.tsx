@@ -138,10 +138,10 @@ const Home = () => {
             <h1 className="text-5xl md:text-7xl font-bold text-techiehub-light mb-6 leading-tight">
               Empowering <span className="bg-gradient-hero bg-clip-text text-transparent">African Tech Talent</span> from the Ground Up
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-4">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-4">
               I'm Kevin, developer & founder of TechieHub
             </p>
-            <p className="text-lg text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-muted-foreground/80 mb-8 max-w-3xl mx-auto leading-relaxed">
               Building real-world tech systems and community from Kenya, with global ambitions to transform how we think about African innovation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -225,8 +225,8 @@ const Home = () => {
                       </div>
                       <span className={`text-xs px-2 py-1 rounded-full self-start ${
                         skill.level === 'Advanced' 
-                          ? 'bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100' 
-                          : 'bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100'
+                          ? 'bg-techiehub-primary/10 text-techiehub-primary border border-techiehub-primary/20' 
+                          : 'bg-secondary text-secondary-foreground border border-border'
                       }`}>
                         {skill.level}
                       </span>
@@ -587,7 +587,7 @@ const Home = () => {
               >
                 <div className="flex items-center space-x-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                    <Star key={i} className="h-4 w-4 text-techiehub-primary fill-current" />
                   ))}
                 </div>
                 <p className="text-muted-foreground italic mb-4 leading-relaxed">
@@ -744,7 +744,7 @@ const Home = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-techiehub-light mb-6">
             Let's Build Something Amazing Together
           </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
             Whether you're looking to collaborate on a project, need development services, 
             or just want to connect with the TechieHub community—I'd love to hear from you.
           </p>
@@ -757,9 +757,9 @@ const Home = () => {
               className="group"
             >
               <Card className="p-6 bg-techiehub-light/10 border-techiehub-light/20 hover:bg-techiehub-light/20 transition-all duration-300 rounded-2xl">
-                <MessageSquare className="h-8 w-8 text-green-400 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                <MessageSquare className="h-8 w-8 text-techiehub-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-semibold text-techiehub-light mb-1">WhatsApp</h3>
-                <p className="text-gray-300 text-sm">+254 726 894 129</p>
+                <p className="text-muted-foreground text-sm">+254 726 894 129</p>
               </Card>
             </a>
             
@@ -768,9 +768,9 @@ const Home = () => {
               className="group"
             >
               <Card className="p-6 bg-techiehub-light/10 border-techiehub-light/20 hover:bg-techiehub-light/20 transition-all duration-300 rounded-2xl">
-                <Mail className="h-8 w-8 text-blue-400 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                <Mail className="h-8 w-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-semibold text-techiehub-light mb-1">Email</h3>
-                <p className="text-gray-300 text-sm">kevin@techiehub.africa</p>
+                <p className="text-muted-foreground text-sm">kevin@techiehub.africa</p>
               </Card>
             </a>
             
@@ -781,9 +781,9 @@ const Home = () => {
               className="group"
             >
               <Card className="p-6 bg-techiehub-light/10 border-techiehub-light/20 hover:bg-techiehub-light/20 transition-all duration-300 rounded-2xl">
-                <Github className="h-8 w-8 text-gray-300 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                <Github className="h-8 w-8 text-muted-foreground mx-auto mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-semibold text-techiehub-light mb-1">GitHub</h3>
-                <p className="text-gray-300 text-sm">@kevinmuli</p>
+                <p className="text-muted-foreground text-sm">@kevinmuli</p>
               </Card>
             </a>
             
@@ -794,9 +794,9 @@ const Home = () => {
               className="group"
             >
               <Card className="p-6 bg-techiehub-light/10 border-techiehub-light/20 hover:bg-techiehub-light/20 transition-all duration-300 rounded-2xl">
-                <Globe className="h-8 w-8 text-blue-300 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                <Globe className="h-8 w-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-semibold text-techiehub-light mb-1">LinkedIn</h3>
-                <p className="text-gray-300 text-sm">kevin-muli</p>
+                <p className="text-muted-foreground text-sm">kevin-muli</p>
               </Card>
             </a>
             
@@ -807,16 +807,16 @@ const Home = () => {
               className="group"
             >
               <Card className="p-6 bg-techiehub-light/10 border-techiehub-light/20 hover:bg-techiehub-light/20 transition-all duration-300 rounded-2xl">
-                <TrendingUp className="h-8 w-8 text-pink-400 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                <TrendingUp className="h-8 w-8 text-techiehub-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-semibold text-techiehub-light mb-1">TikTok</h3>
-                <p className="text-gray-300 text-sm">@kevinmuli</p>
+                <p className="text-muted-foreground text-sm">@kevinmuli</p>
               </Card>
             </a>
           </div>
           
           <div className="bg-techiehub-light/5 rounded-2xl p-8 border border-techiehub-light/10">
             <h3 className="text-xl font-semibold text-techiehub-light mb-4">Quick Connect</h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-muted-foreground mb-6">
               Send me a message on WhatsApp for the fastest response, or email me for detailed project discussions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
