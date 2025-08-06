@@ -767,7 +767,7 @@ const Home = () => {
             </a>
             
             <a 
-              href="mailto:kevin@techiehub.africa"
+              href="mailto:kevinmuli047@gmail.com"
               className="group"
             >
               <Card className="p-6 bg-techiehub-light/10 border-techiehub-light/20 hover:bg-techiehub-light/20 transition-all duration-300 rounded-2xl">
@@ -778,7 +778,7 @@ const Home = () => {
             </a>
             
             <a 
-              href="https://github.com/kevinmuli"
+              href="https://github.com/14389-14389"
               target="_blank"
               rel="noopener noreferrer"
               className="group"
@@ -786,7 +786,7 @@ const Home = () => {
               <Card className="p-6 bg-techiehub-light/10 border-techiehub-light/20 hover:bg-techiehub-light/20 transition-all duration-300 rounded-2xl">
                 <Github className="h-8 w-8 text-muted-foreground mx-auto mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-semibold text-techiehub-light mb-1">GitHub</h3>
-                <p className="text-muted-foreground text-sm">@kevinmuli</p>
+                <p className="text-muted-foreground text-sm">kevinmuli</p>
               </Card>
             </a>
             
@@ -804,7 +804,7 @@ const Home = () => {
             </a>
             
             <a 
-              href="https://tiktok.com/@kevinmuli"
+              href="https://tiktok.com/@embakasi_finesse"
               target="_blank"
               rel="noopener noreferrer"
               className="group"
@@ -812,7 +812,7 @@ const Home = () => {
               <Card className="p-6 bg-techiehub-light/10 border-techiehub-light/20 hover:bg-techiehub-light/20 transition-all duration-300 rounded-2xl">
                 <TrendingUp className="h-8 w-8 text-techiehub-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-semibold text-techiehub-light mb-1">TikTok</h3>
-                <p className="text-muted-foreground text-sm">@kevinmuli</p>
+                <p className="text-muted-foreground text-sm">@embakasifinesse</p>
               </Card>
             </a>
           </div>
@@ -839,7 +839,7 @@ const Home = () => {
                 className="border-techiehub-light text-techiehub-light hover:bg-techiehub-light hover:text-techiehub-dark rounded-2xl"
                 asChild
               >
-                <a href="mailto:kevin@techiehub.africa">
+                <a href="mailto:kevinmuli047@gmail.com">
                   Send Email
                   <Mail className="ml-2 h-5 w-5" />
                 </a>

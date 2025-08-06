@@ -1,6 +1,4 @@
-/**
- * WhatsApp integration utilities
- */
+
 
 const WHATSAPP_NUMBER = '254726894129';
 
