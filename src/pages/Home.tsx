@@ -15,8 +15,8 @@ const Home = () => {
       description: "Complete point-of-sale system with inventory management, sales tracking, and real-time analytics for small businesses.",
       techStack: ["React", "Supabase", "TypeScript", "Tailwind"],
       category: "POS System",
-      github: "https://github.com/kevinmuli",
-      live: "https://smartpos-demo.vercel.app",
+      github: "https://github.com/14389-14389/nice---special-wote-town-final",
+      live: "https://nice-and-special-cereals-kenya.vercel.app/",
       featured: true
     },
     {
@@ -24,8 +24,8 @@ const Home = () => {
       description: "University delivery app connecting students with local vendors, featuring real-time tracking and payment integration.",
       techStack: ["React Native", "Firebase", "Node.js", "PostgreSQL"],
       category: "Delivery App",
-      github: "https://github.com/kevinmuli",
-      live: "https://delivery-hub.app",
+      github: "https://github.com/14389-14389/comrades-express-connect",
+      live: "https://comrades-delivery-express.vercel.app/",
       featured: true
     },
     {
@@ -41,9 +41,9 @@ const Home = () => {
       description: "Professional networking platform for African tech talent with job listings and mentorship features.",
       techStack: ["Next.js", "Supabase", "Stripe", "Tailwind"],
       category: "Community Platform",
-      github: "https://github.com/kevinmuli",
-      live: "https://techiehub.africa",
-      featured: false
+      github: "https://github.com/14389-14389/hub-tech-future-site",
+      live: "https://techiehubfoundation.vercel.app/",
+      featured: true
     }
   ];
 
