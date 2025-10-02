@@ -194,8 +194,8 @@ const Home = () => {
               </h2>
               <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  I'm a <strong>Computer Science student</strong> at <strong>Murang'a University of Technology</strong>, 
-                  passionate about building impactful software that solves real-world problems while pursuing my degree.
+                  I'm a <strong>Software Engineer and Tech Educator</strong> passionate about building impactful 
+                  software that solves real-world problems and drives business growth.
                 </p>
                 <p>
                   As the founder of <strong>TechieHub</strong>, alongside my co-founder <strong>Engineer Lucky Kitonyi</strong>, 
