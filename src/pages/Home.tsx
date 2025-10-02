@@ -83,6 +83,12 @@ const Home = () => {
       icon: "🔧",
       description: "Essential tech skills including digital literacy, productivity tools, and online presence.",
       topics: ["Digital Literacy", "Microsoft Office", "Social Media Management", "Online Business"]
+    },
+    {
+      title: "Forex Trading",
+      icon: "💹",
+      description: "Master forex trading fundamentals, technical analysis, risk management, and trading strategies.",
+      topics: ["Market Analysis", "Trading Strategies", "Risk Management", "Trading Psychology"]
     }
   ];
 
@@ -408,7 +414,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
               {trainingServices.map((course, index) => (
                 <Card key={index} className="p-4 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all duration-300 rounded-2xl">
                   <div className="text-3xl mb-3">{course.icon}</div>
