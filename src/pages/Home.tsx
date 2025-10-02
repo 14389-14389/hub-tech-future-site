@@ -2,8 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
-import { ArrowRight, ExternalLink, Github, Mail, MessageSquare, MapPin, Code, Database, Globe, Smartphone, BookOpen, Users, Star, Calendar, Clock, TrendingUp } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, Mail, MessageSquare, MapPin, Code, Database, Globe, Smartphone, BookOpen, Users, Star, Calendar, Clock, TrendingUp, Wrench, Shield, Search, UserCheck, LineChart, Sparkles } from "lucide-react";
 import heroBackground from "@/assets/hero-bg.jpg";
 import { scrollToSection, SECTION_IDS } from "@/utils/navigation";
 import { openWhatsAppChat, WHATSAPP_MESSAGES } from "@/utils/whatsapp";
@@ -269,98 +270,133 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-background" id={SECTION_IDS.SERVICES}>
+      <section className="py-20 bg-gradient-to-b from-background via-muted/20 to-background" id={SECTION_IDS.SERVICES}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Our <span className="bg-gradient-primary bg-clip-text text-transparent">Services</span>
+          <div className="text-center mb-16 animate-fade-in">
+            <Badge className="mb-4 bg-techiehub-primary/10 text-techiehub-primary border-techiehub-primary/20">
+              Professional Services
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Our <span className="bg-gradient-primary bg-clip-text text-transparent">Premium Services</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              We offer a comprehensive range of IT solutions and training programs to help businesses and individuals thrive in today's digital landscape.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Comprehensive IT solutions and training programs designed to elevate your business and skills in the digital landscape.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {[
               { 
-                icon: "🔧", 
+                icon: Wrench,
                 title: "Bespoke Software Solutions", 
                 desc: "Custom accounting systems, ERP software, and solutions for cooperative societies and MicroFinance.",
                 category: "Development",
+                gradient: "from-blue-500/20 to-cyan-500/20",
+                iconColor: "text-blue-500",
                 details: "We develop tailored software solutions including: Complete accounting systems with financial reporting, inventory management, and multi-user access. ERP platforms integrating HR, finance, and operations. Specialized systems for cooperative societies with member management, loan tracking, and dividend calculations. MicroFinance solutions with loan origination, repayment tracking, and risk assessment tools."
               },
               { 
-                icon: "🛡️", 
+                icon: Shield,
                 title: "Cybersecurity Audit", 
                 desc: "Comprehensive security assessment to identify and address vulnerabilities in your systems.",
                 category: "Security",
+                gradient: "from-purple-500/20 to-pink-500/20",
+                iconColor: "text-purple-500",
                 details: "Our cybersecurity audit includes: Network security assessment and penetration testing. Application security review and code analysis. Infrastructure security evaluation. Compliance assessment for industry standards. Detailed vulnerability reports with prioritized remediation plans. Security policies and procedures development."
               },
               { 
-                icon: "🔍", 
+                icon: Search,
                 title: "Vulnerability Management", 
                 desc: "Proactive identification and remediation of security weaknesses in your IT infrastructure.",
-                category: "Security", 
+                category: "Security",
+                gradient: "from-orange-500/20 to-red-500/20",
+                iconColor: "text-orange-500",
                 details: "Comprehensive vulnerability management covering: Automated vulnerability scanning and monitoring. Risk assessment and prioritization. Patch management and deployment strategies. Configuration management and hardening. Continuous monitoring and threat intelligence. Incident response planning and execution."
               },
               { 
-                icon: "👨‍💼", 
+                icon: UserCheck,
                 title: "Virtual CISO", 
                 desc: "Expert security leadership without the cost of a full-time Chief Information Security Officer.",
                 category: "Consulting",
+                gradient: "from-green-500/20 to-emerald-500/20",
+                iconColor: "text-green-500",
                 details: "Virtual CISO services include: Strategic security planning and roadmap development. Security governance and risk management. Compliance management and audit support. Security awareness training and culture development. Vendor security assessments. Board-level security reporting and communication."
               },
               { 
-                icon: "📱", 
+                icon: Smartphone,
                 title: "Web/Mobile Development", 
                 desc: "Custom applications built with modern technologies for seamless user experience.",
                 category: "Development",
+                gradient: "from-indigo-500/20 to-violet-500/20",
+                iconColor: "text-indigo-500",
                 details: "Full-stack development services: Responsive web applications using React, Next.js, and modern frameworks. Mobile app development for iOS and Android. E-commerce platforms with payment integration. Content management systems and admin dashboards. API development and third-party integrations. Performance optimization and SEO implementation."
               },
               { 
-                icon: "🔬", 
+                icon: LineChart,
                 title: "Forensic Data Analytics", 
                 desc: "Advanced data analysis techniques to detect fraud and investigate digital evidence.",
                 category: "Analytics",
+                gradient: "from-yellow-500/20 to-amber-500/20",
+                iconColor: "text-yellow-600",
                 details: "Digital forensics and data analytics: Financial fraud detection and investigation. Digital evidence collection and preservation. Data recovery from damaged or corrupted systems. Network traffic analysis and intrusion investigation. Mobile device forensics and data extraction. Expert witness testimony and legal support."
               }
-            ].map((service, index) => (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-card/50 backdrop-blur-sm rounded-2xl border border-techiehub-primary/10">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="text-3xl">{service.icon}</div>
-                    <Badge variant="secondary" className="bg-techiehub-primary text-white">
-                      {service.category}
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-xl text-foreground group-hover:text-techiehub-primary transition-colors">
-                    {service.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {service.desc}
-                  </p>
-                  <details className="mb-6">
-                    <summary className="cursor-pointer text-techiehub-primary font-semibold hover:text-techiehub-primary/80 mb-3">
-                      Learn More Details
-                    </summary>
-                    <p className="text-sm text-muted-foreground leading-relaxed mt-3 p-3 bg-muted/30 rounded-lg">
-                      {service.details}
+            ].map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <Card 
+                  key={index} 
+                  className="group relative overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-card backdrop-blur-sm rounded-2xl border border-border hover:border-techiehub-primary/50 animate-fade-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  {/* Gradient overlay on hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                  
+                  <CardHeader className="pb-4 relative z-10">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className={`p-3 rounded-xl bg-gradient-to-br ${service.gradient} border border-border group-hover:scale-110 transition-transform duration-300`}>
+                        <IconComponent className={`h-8 w-8 ${service.iconColor}`} />
+                      </div>
+                      <Badge variant="secondary" className="bg-techiehub-primary/90 text-white border-none shadow-lg">
+                        {service.category}
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-xl text-foreground group-hover:text-techiehub-primary transition-colors duration-300">
+                      {service.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="relative z-10">
+                    <p className="text-muted-foreground mb-6 leading-relaxed min-h-[72px]">
+                      {service.desc}
                     </p>
-                  </details>
-                  <div className="flex gap-2">
+                    
+                    <Accordion type="single" collapsible className="mb-6">
+                      <AccordionItem value="details" className="border-none">
+                        <AccordionTrigger className="text-techiehub-primary font-semibold hover:text-techiehub-primary/80 py-2 hover:no-underline">
+                          <span className="flex items-center gap-2">
+                            <Sparkles className="h-4 w-4" />
+                            Learn More Details
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div className="text-sm text-muted-foreground leading-relaxed p-4 bg-muted/50 rounded-xl border border-border mt-2">
+                            {service.details}
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                    
                     <Button 
                       size="sm"
-                      className="flex-1 bg-gradient-primary hover:opacity-90 text-white"
+                      className="w-full bg-gradient-primary hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105"
                       onClick={() => openWhatsAppChat(WHATSAPP_MESSAGES.SERVICE_INQUIRY(service.title))}
                     >
                       Request Service
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
 
           {/* Training Section */}
