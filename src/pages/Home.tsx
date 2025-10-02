@@ -194,13 +194,13 @@ const Home = () => {
               </h2>
               <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  I'm a final year Computer Science student at <strong>Murang'a University of Technology</strong>, 
-                  passionate about building impactful software that solves real-world problems.
+                  I'm a <strong>Computer Science student</strong> at <strong>Murang'a University of Technology</strong>, 
+                  passionate about building impactful software that solves real-world problems while pursuing my degree.
                 </p>
                 <p>
-                  As the founder of <strong>TechieHub</strong>, I'm on a mission to elevate African tech talent 
-                  and create opportunities for developers across the continent. I also teach coding, graphic design, 
-                  networking, and other digital skills to students and professionals.
+                  As the founder of <strong>TechieHub</strong>, alongside my co-founder <strong>Engineer Lucky Kitonyi</strong>, 
+                  we're on a mission to elevate African tech talent and create opportunities for developers across the continent. 
+                  I also teach coding, graphic design, networking, and other digital skills to students and professionals.
                 </p>
                 <p>
                   My experience spans full-stack development, database design, and building scalable applications 
